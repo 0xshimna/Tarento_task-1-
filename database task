@@ -1,0 +1,64 @@
+Task:
+Task 1:
+1.	Create an ER diagram for :
+	Employee Management system - GEC
+2.	Setup the Postgre on your machine and create a DB.
+3.	Add tables respective to ER diagrams 
+4.	Add data to each table with minimum of 100 rows. 
+5.	Write a Select query with and without conditions. 
+6.	Write an insert query to add new data for all the tables 
+7.	Write an Delete query to delete any existing data for all the tables. 
+8.	Write an Update query to update any existing data for all the tables.
+
+1.Created an ER diagram for Employee Managment System with entities Employee, Department, Project,Skill and Salary
+2.Using pgAdmin created a table for the respective ER diagram with the table for Employee, Department, Project,Skill and Salary
+        Employee(Employee_id, first_name , Last_name , Email),
+        Department(Department_id , Department_name),
+        Project(Project_id , Project_name , start_date , end_date)
+        Salary(Salary_id , Amount),
+        Skill(Skill_id , Skill_name ,Skill_employee_id)
+3.Add 100 datas to all the tables 
+5.Select Query
+ >with condition:
+    SELECT *
+    FROM public."Employee"
+    WHERE "E_id" = 50;
+ >without condition:
+    SELECT * FROM "Employee"
+    ORDER BY "E_id" ASC;
+6.Insert Query:
+   Employee:
+     INSERT INTO public."Employee" ("E_id", "F_name", "L_name", "E_email")
+     VALUES (101, 'Shimna', 'Sheri', 'shimna212001@gmail.com'); 
+   Department:
+     INSERT INTO public."Department" ("Dept_id"," Dept_name")
+     VALUES (101, 'IT');
+  Skill:
+    INSERT INTO public.Skill ("Skill_id"," Skill_name")
+    VALUES (101, 'Programming');
+  Salary:
+    INSERT INTO public."Salary"("S_E_id","Amount" )
+    VALUES (101, 63000);
+  Project:
+    INSERT INTO Project ("Project_id", "Project_name", Start_date,"End_date")
+    VALUES (1, 'Website Development', '2023-12-31','2024-01-21');
+7.Delete Query:
+  Salary:
+    DELETE FROM salary
+    WHERE "S_E_id" = 101;
+  Project:
+    DELETE FROM "project"
+    WHERE "project_id" = 101;
+  Employee:
+    DELETE FROM "Employee"
+    WHERE "E_id" = 102;
+  Department:
+    DELETE FROM "Department"
+    WHERE "Dept_id" = 101;
+  Skill:
+    DELETE FROM "employee"
+    WHERE "Skill_id" = 101; 
+8.Update Query:
+  Updatepublic."Employee"
+  SET "E_id"=50
+  WHERE "E_id" = 101;
